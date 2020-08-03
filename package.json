@@ -1,12 +1,12 @@
 {
-  "name": "nexjs-ws.demo-project.client",
+  "name": "nexjs-ws.demo-project.client-vue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "ws:update": "nexjs ts ws up-client -s ../nexjs-ws.dev-project.server -o ./src/lib/wsclient"
+    "ws:update": "nexjs ts ws up-client -s ../nexjs-ws.dev-project.server-base -o ./src/lib/wsclient"
   },
   "dependencies": {
     "@nexjs/wsclient": "^1.0.6",
