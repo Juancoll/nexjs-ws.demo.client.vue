@@ -1,6 +1,6 @@
 import { WSServiceBase, HubNotification, HubNotificationCredentials, HubNotificationCredentialsData, HubNotificationData } from '@nexjs/wsclient';
 
-import { AnyData } from '../../models/AnyData';
+import { DataType } from '../../models/DataType';
 
 export class BaseContractWSService extends WSServiceBase {
     //#region [ implement WSServiceBase ]
@@ -13,7 +13,7 @@ export class BaseContractWSService extends WSServiceBase {
     public readonly onUpdate = new HubNotification(this._hub, this.name, 'onUpdate');
 
     // isAuth: false
-    public readonly onDataUpdate = new HubNotificationData<AnyData>(this._hub, this.name, 'onDataUpdate');
+    public readonly onDataUpdate = new HubNotificationData<DataType>(this._hub, this.name, 'onDataUpdate');
     //#endregion
 
     //#region [ rest ]

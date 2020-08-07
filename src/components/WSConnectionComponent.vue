@@ -34,7 +34,7 @@ export default class WSConnectionComponent extends Vue {
     async connect() {
         try {
             console.log('[WSConnectionComponent] connect() request');
-            await wsapi.ws.connectAsync(this.url, '/socket.io', '');
+            await wsapi.ws.connectAsync(this.url, '/wsapi', '');
             console.log('[WSConnectionComponent] connect() response');
         } catch (err) {
             console.warn(err);

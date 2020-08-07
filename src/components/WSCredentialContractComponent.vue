@@ -32,24 +32,24 @@ export default class WSCredentialContractComponent extends Vue {
 
     async mounted() {
         console.log('[WSCredentialContractComponent] mounted()');
-        wsapi.credentialContract.onUpdate.on(() =>
+        wsapi.credentialsContract.onUpdate.on(() =>
             console.log(`[credentialContract] onUpdate`)
         );
-        wsapi.credentialContract.onDataUpdate.on(data =>
+        wsapi.credentialsContract.onDataUpdate.on(data =>
             console.log(`[credentialContract] onDataUpdate`, data)
         );
     }
     async destroyed() {
         console.log('[WSCredentialContractComponent] destroyed()');
-        wsapi.credentialContract.onUpdate.off();
-        wsapi.credentialContract.onDataUpdate.off();
+        wsapi.credentialsContract.onUpdate.off();
+        wsapi.credentialsContract.onDataUpdate.off();
     }
 
     async subscribe() {
         try {
             console.log('[WSCredentialContractComponent] subscribe request');
-            await wsapi.credentialContract.onUpdate.sub('user-credentials-001');
-            await wsapi.credentialContract.onDataUpdate.sub(
+            await wsapi.credentialsContract.onUpdate.sub('user-credentials-001');
+            await wsapi.credentialsContract.onDataUpdate.sub(
                 'user-credentials-002'
             );
             console.log('[WSCredentialContractComponent] subscribe response');
@@ -61,8 +61,8 @@ export default class WSCredentialContractComponent extends Vue {
     async unsubscribe() {
         try {
             console.log('[WSCredentialContractComponent] unsubscribe request');
-            await wsapi.credentialContract.onUpdate.unsub();
-            await wsapi.credentialContract.onDataUpdate.unsub();
+            await wsapi.credentialsContract.onUpdate.unsub();
+            await wsapi.credentialsContract.onDataUpdate.unsub();
             console.log('[WSCredentialContractComponent] unsubscribe response');
         } catch (err) {
             console.warn(err);
@@ -72,7 +72,7 @@ export default class WSCredentialContractComponent extends Vue {
     async print() {
         try {
             console.log('[WSCredentialContractComponent] print() request');
-            await wsapi.credentialContract.print('user-credentials-003');
+            await wsapi.credentialsContract.print('user-credentials-003');
             console.log('[WSCredentialContractComponent] print() response');
         } catch (err) {
             console.warn(err);
@@ -82,7 +82,7 @@ export default class WSCredentialContractComponent extends Vue {
     async notify() {
         try {
             console.log('[WSCredentialContractComponent] notify() request');
-            await wsapi.credentialContract.notify();
+            await wsapi.credentialsContract.notify();
             console.log('[WSCredentialContractComponent] notify() response');
         } catch (err) {
             console.warn(err);
