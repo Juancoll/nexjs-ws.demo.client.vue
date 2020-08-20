@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { wsapi } from '@/wsapi';
+import { wsapi } from '@/services/wsapi';
 
 @Component
 export default class WSAuthContractComponent extends Vue {

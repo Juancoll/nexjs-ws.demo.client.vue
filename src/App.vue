@@ -7,6 +7,7 @@
         <WSBaseContractComponent />
         <WSCredentialContractComponent />
         <WSAuthContractComponent />
+        <HttpApiComponent />
     </div>
 </template>
 
@@ -16,13 +17,15 @@ import WSConnectionComponent from './components/WSConnectionComponent.vue';
 import WSBaseContractComponent from './components/WSBaseContractComponent.vue';
 import WSCredentialContractComponent from './components/WSCredentialContractComponent.vue';
 import WSAuthContractComponent from './components/WSAuthContractComponent.vue';
+import HttpApiComponent from './components/HttpApiComponent.vue';
 
 @Component({
     components: {
         WSConnectionComponent,
         WSBaseContractComponent,
         WSCredentialContractComponent,
-        WSAuthContractComponent
+        WSAuthContractComponent,
+        HttpApiComponent
     }
 })
 export default class App extends Vue {
