@@ -18,6 +18,8 @@ import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+// @ts-ignore
+import { PackageJson } from '../models';
 /**
  * DefaultApi - axios parameter creator
  * @export
@@ -96,7 +98,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async appControllerGetHello(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async appControllerGetHello(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).appControllerGetHello(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -108,7 +110,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async appControllerGetPackage(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async appControllerGetPackage(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PackageJson>> {
             const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).appControllerGetPackage(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -129,7 +131,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        appControllerGetHello(options?: any): AxiosPromise<void> {
+        appControllerGetHello(options?: any): AxiosPromise<string> {
             return DefaultApiFp(configuration).appControllerGetHello(options).then((request) => request(axios, basePath));
         },
         /**
@@ -137,7 +139,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        appControllerGetPackage(options?: any): AxiosPromise<void> {
+        appControllerGetPackage(options?: any): AxiosPromise<PackageJson> {
             return DefaultApiFp(configuration).appControllerGetPackage(options).then((request) => request(axios, basePath));
         },
     };
@@ -155,7 +157,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    appControllerGetHello(options?: any): AxiosPromise<void>;
+    appControllerGetHello(options?: any): AxiosPromise<string>;
 
     /**
      * 
@@ -163,7 +165,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    appControllerGetPackage(options?: any): AxiosPromise<void>;
+    appControllerGetPackage(options?: any): AxiosPromise<PackageJson>;
 
 }
 

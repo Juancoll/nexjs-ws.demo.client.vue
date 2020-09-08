@@ -6,9 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "ws:update-from-server-base": "nexjs ts ws up-client -s ../nexjs-ws.demo.server.base -o ./src/lib/wsclient",
-    "ws:update-from-server-nestjs": "nexjs ts ws up-client -s ../nexjs-ws.demo.server.nestjs -o ./src/lib/wsclient",
-    "http:update-from-server-nestjs": "nexjs ts http up-client -s ../nexjs-ws.demo.server.nestjs/dist/swagger-spec.json -o ./src/lib/httpclient"
+    "ws:update": "  nexjs ts ws   up-client -s ../nexjs-ws.demo.server.nestjs                        -o ./src/lib/wsclient",
+    "http:update": "nexjs ts http up-client -s ../nexjs-ws.demo.server.nestjs/dist/swagger-spec.json -o ./src/lib/httpclient"
   },
   "dependencies": {
     "@nexjs/wsclient": "^1.0.6",
@@ -23,14 +22,14 @@
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
-    "@nexjs/cli": "^1.4.0",
+    "@nexjs/cli": "^1.5.2",
     "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-plugin-typescript": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
+    "@vue/cli-plugin-babel": "^4.5.4",
+    "@vue/cli-plugin-eslint": "^4.5.4",
+    "@vue/cli-plugin-typescript": "^4.5.4",
+    "@vue/cli-service": "^4.5.4",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "eslint": "^6.7.2",

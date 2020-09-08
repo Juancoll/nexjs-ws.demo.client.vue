@@ -12,32 +12,32 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import WSConnectionComponent from './components/WSConnectionComponent.vue';
-import WSBaseContractComponent from './components/WSBaseContractComponent.vue';
-import WSCredentialContractComponent from './components/WSCredentialContractComponent.vue';
-import WSAuthContractComponent from './components/WSAuthContractComponent.vue';
-import HttpApiComponent from './components/HttpApiComponent.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import WSConnectionComponent from './components/WSConnectionComponent.vue'
+import WSBaseContractComponent from './components/WSBaseContractComponent.vue'
+import WSCredentialContractComponent from './components/WSCredentialContractComponent.vue'
+import WSAuthContractComponent from './components/WSAuthContractComponent.vue'
+import HttpApiComponent from './components/HttpApiComponent.vue'
 
-@Component({
+@Component( {
     components: {
         WSConnectionComponent,
         WSBaseContractComponent,
         WSCredentialContractComponent,
         WSAuthContractComponent,
-        HttpApiComponent
-    }
-})
+        HttpApiComponent,
+    },
+} )
 export default class App extends Vue {
-    constructor() {
-        super();
-        console.log('[App] constructor');
+    constructor () {
+        super()
+        console.log( '[App] constructor' )
     }
-    mounted() {
-        console.log('[App] mounted');
+    mounted (): void {
+        console.log( '[App] mounted' )
     }
-    destroyed() {
-        console.log('[App] destroyed');
+    destroyed (): void {
+        console.log( '[App] destroyed' )
     }
 }
 </script>

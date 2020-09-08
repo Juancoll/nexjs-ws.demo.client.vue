@@ -18,48 +18,48 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { httpApi } from '@/services/httpapi';
+import { Component, Vue } from 'vue-property-decorator'
+import { httpApi } from '@/services/httpapi'
 
 @Component
 export default class HttpApiComponent extends Vue {
     public url = httpApi.url;
 
-    constructor() {
-        super();
-        console.log('[HttpApiComponent] constructor()');
+    constructor () {
+        super()
+        console.log( '[HttpApiComponent] constructor()' )
     }
 
-    async mounted() {
-        console.log('[HttpApiComponent] mounted()');
+    mounted (): void {
+        console.log( '[HttpApiComponent] mounted()' )
     }
-    async destroyed() {
-        console.log('[HttpApiComponent] destroyed()');
-    }
-
-    setUrl() {
-        httpApi.url = this.url;
+    destroyed (): void {
+        console.log( '[HttpApiComponent] destroyed()' )
     }
 
-    async getDefault() {
+    setUrl (): void {
+        httpApi.url = this.url
+    }
+
+    async getDefault (): Promise<void> {
         try {
-            console.log('[HttpApiComponent] /api request');
-            const response = await httpApi.default.appControllerGetHello();
-            console.log('[HttpApiComponent] /api response', response.data);
-        } catch (err) {
-            console.warn(err);
+            console.log( '[HttpApiComponent] /api request' )
+            const response = await httpApi.default.appControllerGetHello()
+            console.log( '[HttpApiComponent] /api response', response.data )
+        } catch ( err ) {
+            console.warn( err )
         }
     }
-    async getPackage() {
+    async getPackage (): Promise<void> {
         try {
-            console.log('[HttpApiComponent] /api/package request');
-            const response = await httpApi.default.appControllerGetPackage();
+            console.log( '[HttpApiComponent] /api/package request' )
+            const response = await httpApi.default.appControllerGetPackage()
             console.log(
                 '[HttpApiComponent] /api/package response',
-                response.data
-            );
-        } catch (err) {
-            console.warn(err);
+                response.data,
+            )
+        } catch ( err ) {
+            console.warn( err )
         }
     }
 }

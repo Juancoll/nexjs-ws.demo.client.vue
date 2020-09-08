@@ -12,10 +12,26 @@
  */
 
 
+import { User } from './user';
 
-export * from './api/auth-api';
-export * from './api/db-datas-api';
-export * from './api/db-users-api';
-export * from './api/default-api';
-export * from './api/test-api';
+/**
+ * 
+ * @export
+ * @interface LoginJwtAuthResponse
+ */
+export interface LoginJwtAuthResponse {
+    /**
+     * 
+     * @type {User}
+     * @memberof LoginJwtAuthResponse
+     */
+    user: User;
+    /**
+     * 
+     * @type {string}
+     * @memberof LoginJwtAuthResponse
+     */
+    token: string;
+}
+
 

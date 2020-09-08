@@ -18,6 +18,8 @@ import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+// @ts-ignore
+import { User } from '../models';
 /**
  * DbUsersApi - axios parameter creator
  * @export
@@ -87,7 +89,7 @@ export const DbUsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async dBUserControllerCreateUsers(email: string, password: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async dBUserControllerCreateUsers(email: string, password: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
             const localVarAxiosArgs = await DbUsersApiAxiosParamCreator(configuration).dBUserControllerCreateUsers(email, password, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -110,7 +112,7 @@ export const DbUsersApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dBUserControllerCreateUsers(email: string, password: string, options?: any): AxiosPromise<void> {
+        dBUserControllerCreateUsers(email: string, password: string, options?: any): AxiosPromise<User> {
             return DbUsersApiFp(configuration).dBUserControllerCreateUsers(email, password, options).then((request) => request(axios, basePath));
         },
     };
@@ -130,7 +132,7 @@ export interface DbUsersApiInterface {
      * @throws {RequiredError}
      * @memberof DbUsersApiInterface
      */
-    dBUserControllerCreateUsers(email: string, password: string, options?: any): AxiosPromise<void>;
+    dBUserControllerCreateUsers(email: string, password: string, options?: any): AxiosPromise<User>;
 
 }
 

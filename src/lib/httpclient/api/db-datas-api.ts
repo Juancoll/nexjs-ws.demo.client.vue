@@ -154,7 +154,7 @@ export const DbDatasApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async dBDataControllerCreateData(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async dBDataControllerCreateData(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await DbDatasApiAxiosParamCreator(configuration).dBDataControllerCreateData(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -166,7 +166,7 @@ export const DbDatasApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async dBDataControllerSubscribeDataEvents(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async dBDataControllerSubscribeDataEvents(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await DbDatasApiAxiosParamCreator(configuration).dBDataControllerSubscribeDataEvents(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -178,7 +178,7 @@ export const DbDatasApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async dBDataControllerUnsubscribeDataEvents(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async dBDataControllerUnsubscribeDataEvents(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await DbDatasApiAxiosParamCreator(configuration).dBDataControllerUnsubscribeDataEvents(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -190,7 +190,7 @@ export const DbDatasApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async dBDataControllerUpdateData(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async dBDataControllerUpdateData(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await DbDatasApiAxiosParamCreator(configuration).dBDataControllerUpdateData(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -211,7 +211,7 @@ export const DbDatasApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dBDataControllerCreateData(options?: any): AxiosPromise<void> {
+        dBDataControllerCreateData(options?: any): AxiosPromise<string> {
             return DbDatasApiFp(configuration).dBDataControllerCreateData(options).then((request) => request(axios, basePath));
         },
         /**
@@ -219,7 +219,7 @@ export const DbDatasApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dBDataControllerSubscribeDataEvents(options?: any): AxiosPromise<void> {
+        dBDataControllerSubscribeDataEvents(options?: any): AxiosPromise<string> {
             return DbDatasApiFp(configuration).dBDataControllerSubscribeDataEvents(options).then((request) => request(axios, basePath));
         },
         /**
@@ -227,7 +227,7 @@ export const DbDatasApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dBDataControllerUnsubscribeDataEvents(options?: any): AxiosPromise<void> {
+        dBDataControllerUnsubscribeDataEvents(options?: any): AxiosPromise<string> {
             return DbDatasApiFp(configuration).dBDataControllerUnsubscribeDataEvents(options).then((request) => request(axios, basePath));
         },
         /**
@@ -235,7 +235,7 @@ export const DbDatasApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dBDataControllerUpdateData(options?: any): AxiosPromise<void> {
+        dBDataControllerUpdateData(options?: any): AxiosPromise<string> {
             return DbDatasApiFp(configuration).dBDataControllerUpdateData(options).then((request) => request(axios, basePath));
         },
     };
@@ -253,7 +253,7 @@ export interface DbDatasApiInterface {
      * @throws {RequiredError}
      * @memberof DbDatasApiInterface
      */
-    dBDataControllerCreateData(options?: any): AxiosPromise<void>;
+    dBDataControllerCreateData(options?: any): AxiosPromise<string>;
 
     /**
      * 
@@ -261,7 +261,7 @@ export interface DbDatasApiInterface {
      * @throws {RequiredError}
      * @memberof DbDatasApiInterface
      */
-    dBDataControllerSubscribeDataEvents(options?: any): AxiosPromise<void>;
+    dBDataControllerSubscribeDataEvents(options?: any): AxiosPromise<string>;
 
     /**
      * 
@@ -269,7 +269,7 @@ export interface DbDatasApiInterface {
      * @throws {RequiredError}
      * @memberof DbDatasApiInterface
      */
-    dBDataControllerUnsubscribeDataEvents(options?: any): AxiosPromise<void>;
+    dBDataControllerUnsubscribeDataEvents(options?: any): AxiosPromise<string>;
 
     /**
      * 
@@ -277,7 +277,7 @@ export interface DbDatasApiInterface {
      * @throws {RequiredError}
      * @memberof DbDatasApiInterface
      */
-    dBDataControllerUpdateData(options?: any): AxiosPromise<void>;
+    dBDataControllerUpdateData(options?: any): AxiosPromise<string>;
 
 }
 

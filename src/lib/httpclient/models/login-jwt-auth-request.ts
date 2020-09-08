@@ -13,9 +13,24 @@
 
 
 
-export * from './api/auth-api';
-export * from './api/db-datas-api';
-export * from './api/db-users-api';
-export * from './api/default-api';
-export * from './api/test-api';
+/**
+ * 
+ * @export
+ * @interface LoginJwtAuthRequest
+ */
+export interface LoginJwtAuthRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof LoginJwtAuthRequest
+     */
+    email: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LoginJwtAuthRequest
+     */
+    password: string;
+}
+
 
