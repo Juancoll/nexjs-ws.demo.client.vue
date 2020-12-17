@@ -1,7 +1,7 @@
 import { Model } from './Model'
 import { ModelComponent } from './ModelComponent'
 
-export class User extends Model    {
+export class User extends Model {
     public email: string
     public password: string
     public roles: string[]

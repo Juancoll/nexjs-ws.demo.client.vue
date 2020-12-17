@@ -72,7 +72,7 @@ export default class WSCredentialContractComponent extends Vue {
     async print (): Promise<void> {
         try {
             console.log( '[WSCredentialContractComponent] print() request' )
-            await wsapi.credentialsContract.print( 'user-credentials-003' )
+            await wsapi.credentialsContract.print( )
             console.log( '[WSCredentialContractComponent] print() response' )
         } catch ( err ) {
             console.warn( err )

@@ -10,7 +10,7 @@
     "http:update": "nexjs ts http up-client -s ../nexjs-ws.demo.server.nestjs/dist/swagger-spec.json -o ./src/lib/httpclient"
   },
   "dependencies": {
-    "@nexjs/wsclient": "^1.0.6",
+    "@nexjs/wsclient": "^1.6.0",
     "@types/socket.io-client": "^1.4.33",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
@@ -22,7 +22,7 @@
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
-    "@nexjs/cli": "^1.5.2",
+    "@nexjs/cli": "^1.6.2",
     "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
