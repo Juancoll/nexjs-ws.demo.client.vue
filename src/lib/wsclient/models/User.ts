@@ -1,13 +1,12 @@
-import { Model } from './Model'
-import { ModelComponent } from './ModelComponent'
 
-export class User extends Model {
+export class User {
     public email: string
     public password: string
     public roles: string[]
-    public name: string
-    public surname: string
 
-    constructor ( init?: Partial<User> ) { super( init ) }
+    constructor ( init?: Partial<User> ) {
+         
+        Object.assign( this, init )
+    }
 
 }

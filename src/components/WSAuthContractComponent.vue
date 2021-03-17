@@ -23,16 +23,14 @@
                 <button @click="print">send</button>
                 demo.print()
             </li>
-            <li>
-                <button @click="notify">send</button> demo.notify()
-            </li>
+            <li><button @click="notify">send</button> demo.notify()</li>
         </ul>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { wsapi } from '@/services/wsapi'
+import { wsapi } from '@/wsapi'
 
 @Component
 export default class WSAuthContractComponent extends Vue {
@@ -53,7 +51,7 @@ export default class WSAuthContractComponent extends Vue {
         wsapi.authContract.onUpdate.on( () =>
             console.log( '[credentialContract] onUpdate' ),
         )
-        wsapi.authContract.onDataUpdate.on( data =>
+        wsapi.authContract.onDataUpdate.on( ( data ) =>
             console.log( '[credentialContract] onDataUpdate', data ),
         )
     }
@@ -77,7 +75,7 @@ export default class WSAuthContractComponent extends Vue {
         }
     }
 
-    async login (): Promise<void>{
+    async login (): Promise<void> {
         try {
             console.log( '[WSAuthContractComponent] login' )
             await wsapi.auth.login( {
@@ -101,8 +99,8 @@ export default class WSAuthContractComponent extends Vue {
     async subscribe (): Promise<void> {
         try {
             console.log( '[WSAuthContractComponent] subscribe request' )
-            await wsapi.authContract.onUpdate.sub( 'user-credentials-001' )
-            await wsapi.authContract.onDataUpdate.sub( 'user-credentials-002' )
+            await wsapi.authContract.onUpdate.sub()
+            await wsapi.authContract.onDataUpdate.sub()
             console.log( '[WSAuthContractComponent] subscribe response' )
         } catch ( err ) {
             console.warn( err )
@@ -130,7 +128,7 @@ export default class WSAuthContractComponent extends Vue {
         }
     }
 
-    async notify (): Promise<void>{
+    async notify (): Promise<void> {
         try {
             console.log( '[WSAuthContractComponent] notify() request' )
             await wsapi.authContract.notify()
