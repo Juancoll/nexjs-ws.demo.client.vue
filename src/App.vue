@@ -13,11 +13,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import WSConnectionComponent from './components/WSConnectionComponent.vue'
-import WSBaseContractComponent from './components/WSBaseContractComponent.vue'
-import WSCredentialContractComponent from './components/WSCredentialContractComponent.vue'
-import WSAuthContractComponent from './components/WSAuthContractComponent.vue'
-import HttpApiComponent from './components/HttpApiComponent.vue'
+import WSConnectionComponent from './components/wsconnection.vue'
+import WSBaseContractComponent from './components/contracts/base.contract.vue'
+import WSCredentialContractComponent from './components/contracts/credential.contract.vue'
+import WSAuthContractComponent from './components/contracts/auth.contract.vue'
+import HttpApiComponent from './components/http.api.vue'
 
 @Component( {
     components: {
